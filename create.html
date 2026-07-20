@@ -11,11 +11,56 @@
     <h3><i>Strength Training Edition</i></h3>
     </header>
 
-    <section>
-        <h2>CREATE/EDIT ENTRY</h2>
-        <p>Exercise Name:</p>
+    <main>
 
-    </section>
 
+    <!-- this will need to change according to if the user clicks create or edit -->
+    <h2 id="page-title">CREATE WORKOUT ENTRY</h2>
+
+        <form>
+            <div>
+            <label for="exercise-name">Exercise Name: </label>
+            <input type="text" id="exercise-name" name="exercise-name">
+            </div>
+
+            <div>
+            <label for="weight">Weight(lbs): </label>
+            <input type="number" id="weight" name="weight">
+            </div>
+            
+            <div>
+            <label for="sets">Total Sets: </label>
+            <input type="number" id="sets" name="sets">
+            </div>
+            
+            <div>
+            <label for="reps">Repetition Count: </label>
+            <input type="number" id="reps" name="reps">
+            </div>
+            
+            <div>
+            <label for="date-completed">Date Completed: </label>
+            <input type="date" id="date-completed" name="date-completed">
+            </div>
+ 
+        <button type="submit">Save Workout</button>
+
+        </form>
+
+
+
+
+    <section id="previous-entry">
+        <h3>Previous Entry</h3>
+        <article>
+        <p>No previous workouts found.</p>
+
+        </article>
+
+        <!-- Save for JavaScript -->
+        <!-- needs to display all previous workouts that have identicsal names to the one being created/edited -->
+    </section>  
+    
+    </main>
 </body>
 </html>

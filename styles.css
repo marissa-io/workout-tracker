@@ -75,17 +75,79 @@ main {
     background-color: #d3e0ff;
 }
 
-.features h2,  .quote {
+.features h2 {
     text-align: center;
         font-family: "Monaco", monospace;
         color: white;
         text-shadow: 2px 2px gray;
 }
 
+.features{
+    padding: 70px 80px;
+    background-color: #d3e0ff;
+
+}
+
+.features h2{
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
 .card{
     display: flex;
-    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 250px;
+    min-height: 300px;
+    padding: 30px;
+    flex-direction: column;
 }
+
+.card img {
+
+    /* placeholder until images are created */
+
+}
+
+.card h3{
+    font-family: "Monaco",monospace;
+    font-size: 1.5rem;
+    color:#84a9ff;
+    margin-bottom:15px;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+.quote {
+    width: 80%;
+    font-family: "Monaco", monospace;
+    font-size:1.5rem;
+    color: white;
+    text-shadow: 2px 2px gray;
+    text-align: center;
+    padding: 80px;
+
+}
+
+#logo{
+    float: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+
+
+}
+
+
+
 /* References */
 /* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */
 /* https://www.w3schools.com/css/css_font_size.asp */
@@ -99,3 +161,7 @@ main {
 /* https://www.w3schools.com/howto/howto_css_image_responsive.asp */
 /* https://www.freecodecamp.org/news/css-properties-examples/ */
 /* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction */
+/* https://learn.shayhowe.com/html-css/positioning-content/ */
+/* https://www.w3schools.com/howto/howto_css_rounded_images.asp */

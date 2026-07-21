@@ -198,14 +198,32 @@ font-size: 1rem;
         font-size: 1rem;
 }
 
+.workout-header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 20px 50px 0 50px;
+padding: 0 35px;
+font-family: "Monaco", monospace;
+}
+
 .workout-card{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     border-radius: 15px;
-    padding: 35px;
-    margin: 20px 50px;
+    padding: 20px;
+    margin: 0px 50px;
+}
+
+
+.workout-info{
+display: flex;
+font-family: "Monaco", monospace;
+color: #84a9ff;
+gap: 120px;
+
 }
 
 .workout-buttons {

@@ -1,0 +1,59 @@
+header {
+ 
+    background-color: #84a9ff;
+    text-align: center;
+}
+
+.title h1{
+    font-family: "Monaco", monospace;
+    font-size: 4rem;
+   color: white;
+text-shadow: 2px 2px gray;
+
+}
+
+.title h2{
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 2rem;
+    color: #f3d3fe;
+    text-shadow: 2px 2px white;
+
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    background-color: #f5f8ff; 
+    font-family: "Monaco", monospace;
+
+
+}
+
+.intro img {
+    width: 800px;
+    height: 600px;
+}
+
+main {
+    margin-top: 0px;
+    padding: 0px;
+    background-color: #d3e0ff;
+}
+
+.features h2,  .quote {
+    text-align: center;
+        font-family: "Monaco", monospace;
+        color: white;
+        text-shadow: 2px 2px gray;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+}
+/* References */
+/* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */
+/* https://www.w3schools.com/css/css_font_size.asp */
+/* https://www.geeksforgeeks.org/css/how-to-change-line-spacing-in-css/ */
+/* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
+/* https://www.w3schools.com/css/css_text_shadow.asp */

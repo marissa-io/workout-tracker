@@ -2,6 +2,7 @@ header {
  
     background-color: #84a9ff;
     text-align: center;
+    padding: 30px 0;
 }
 
 .title h1{
@@ -9,6 +10,8 @@ header {
     font-size: 4rem;
    color: white;
 text-shadow: 2px 2px gray;
+margin-top: 0;
+margin-bottom: 5px;
 
 }
 
@@ -17,21 +20,53 @@ text-shadow: 2px 2px gray;
     font-size: 2rem;
     color: #f3d3fe;
     text-shadow: 2px 2px white;
-
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .intro {
     display: flex;
     align-items: center;
     background-color: #f5f8ff; 
-    font-family: "Monaco", monospace;
-
+    justify-content: space-between;
 
 }
 
+.intro-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap:50px 
+}
+
+.intro-text h2 {
+font-family: "Monaco", monospace;
+font-size: 4rem;
+color: #84a9ff;
+text-shadow: 2px 2px rgb(18, 48, 108);
+text-align: center;
+}
+
+.intro button {
+    width: 250px;
+    height: 50px;
+    font-family: "Monaco", monospace;
+    font-size: 1.5rem;
+    background-color:#84a9ff; 
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
 .intro img {
-    width: 800px;
-    height: 600px;
+    width: 50%;
+    max-width: 700px;
+    height: auto;
 }
 
 main {
@@ -57,3 +92,10 @@ main {
 /* https://www.geeksforgeeks.org/css/how-to-change-line-spacing-in-css/ */
 /* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
 /* https://www.w3schools.com/css/css_text_shadow.asp */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/justify-content */
+/* https://stackoverflow.com/questions/20626685/how-do-i-set-distance-between-flexbox-items */
+/* https://www.w3schools.com/csS/css3_buttons.asp */
+/* https://www.w3schools.com/cssref/pr_class_cursor.php */
+/* https://www.w3schools.com/howto/howto_css_image_responsive.asp */
+/* https://www.freecodecamp.org/news/css-properties-examples/ */
+/* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */

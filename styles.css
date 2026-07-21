@@ -231,6 +231,14 @@ gap: 120px;
     gap: 10px;
 }
 
+.workout-buttons button{
+        background-color: #84a9ff;
+    color: white;
+    font-family: "Monaco", monospace;
+    border: none;
+        border-radius: 10px;
+}
+
 #workout-history {
     text-align:center;
     font-family: "Monaco", monospace;

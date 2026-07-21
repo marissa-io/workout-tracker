@@ -24,6 +24,8 @@ margin-bottom: 5px;
     margin-bottom: 0;
 }
 
+/* index.html */
+
 .intro {
     display: flex;
     align-items: center;
@@ -146,7 +148,77 @@ main {
 
 }
 
+/* history.html */
 
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-buttons button {
+    background-color: #84a9ff;
+    color: white;
+    font-family: "Monaco", monospace;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.search-bar{
+display: flex;
+gap: 20px;
+}
+
+#search-workout {
+    border: 2px solid #84a9ff;
+font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+
+.filter-by{
+    padding: 15px;
+    border-radius:10px;
+}
+
+.filter-by label {
+    font-family: "Monaco", monospace;
+    text-shadow: 2px 2px white;
+    font-size:1rem;
+}
+
+.filter-by select{
+       font-family: "Monaco", monospace;
+        background-color: #84a9ff;
+        color: white;
+        border-color: #f5f8ff;
+        font-size: 1rem;
+}
+
+.workout-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 20px 50px;
+}
+
+.workout-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#workout-history {
+    text-align:center;
+    font-family: "Monaco", monospace;
+    color: white;
+    text-shadow: 2px 2px gray;
+}
 
 /* References */
 /* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */

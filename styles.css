@@ -307,8 +307,23 @@ form button {
     font-family: "Monaco", monospace;
     font-size: 1rem;
     cursor: pointer;
+    border: none;
 }
 
+
+#previous-entry{
+    background-color: white;
+    border-radius:20px;
+    width: 500px;
+    margin: 30px;
+    padding: 20px;
+}
+
+#previous-entry h3 {
+
+    font-family: "Monaco", monospace;
+    color:#84a9ff;
+}
 /* References */
 /* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */
 /* https://www.w3schools.com/css/css_font_size.asp */

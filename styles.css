@@ -140,7 +140,6 @@ main {
 }
 
 #logo{
-    float: center;
     width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -202,19 +201,19 @@ font-size: 1rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin: 20px 50px 0 50px;
+margin: 20px 200px 0 200px;
 padding: 0 35px;
 font-family: "Monaco", monospace;
+color: #84a9ff;
 }
 
 .workout-card{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: white;
     border-radius: 15px;
     padding: 20px;
-    margin: 0px 50px;
+    margin: 0px 200px 20px 200px;
 }
 
 
@@ -222,14 +221,32 @@ font-family: "Monaco", monospace;
 display: flex;
 font-family: "Monaco", monospace;
 color: #84a9ff;
-gap: 120px;
+gap: 60px;
+/* width: 70%;
+gap: 60px; */
+}
 
+.workout-info-titles{
+display: flex;
+font-family: "Monaco", monospace;
+color: #84a9ff;
+width: 70%;
+gap: 190px;
+}
+.spec-date{
+    width: 180px;
+}
+.spec-exercise-name{
+    width: 250px;
+    margin-right: 0;
 }
 
 .workout-buttons {
     display: flex;
     gap: 10px;
+    margin-left: auto;
 }
+ 
 
 .workout-buttons button{
         background-color: #84a9ff;

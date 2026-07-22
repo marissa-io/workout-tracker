@@ -18,10 +18,10 @@
     <!-- this will need to change according to if the user clicks create or edit -->
     <h2 id="page-title">CREATE WORKOUT ENTRY</h2>
 
-        <form>
+        <form onsubmit="return addWorkoutEntry(this)">
             <div class="form-div">
-            <label for="exercise-name">Exercise Name: </label>
-            <input type="text" id="exercise-name" name="exercise-name">
+            <label for="exerciseName">Exercise Name: </label>
+            <input type="text" id="exerciseName" name="exerciseName">
             </div>
 
             <div class="form-div">
@@ -40,8 +40,8 @@
             </div>
             
             <div class="form-div">
-            <label for="date-completed">Date Completed: </label>
-            <input type="date" id="date-completed" name="date-completed">
+            <label for="dateCompleted">Date Completed: </label>
+            <input type="date" id="dateCompleted" name="dateCompleted">
             </div>
  
         <button type="submit">Save Workout</button>
@@ -67,5 +67,8 @@
      <footer>
         <p>2026 Workout Tracker: Version 1.0</p>
     </footer>
+
+    <!-- https://www.geeksforgeeks.org/html/how-to-link-javascript-file-to-a-separate-html-file/ -->
+     <script src="create.js"></script>
 </body>
 </html>

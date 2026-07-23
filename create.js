@@ -21,10 +21,12 @@ let entries = [
 
 ]
 
-//1. user fills out form, reads values, and creates workout object
+
+//1. CREATE DATA
+// user fills out form, reads values, and creates workout object
 
 // https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
-function addWorkoutEntry(form){
+function addWorkoutEntry(form){ //called by browser when form is submitted
   
 //testing to see if function is working in console - passed
     console.log("Function Started");
@@ -59,7 +61,7 @@ else{
 entries.push(workoutEntry);
 // testing to see if object is added to entries - passed
 
-// 2. Load existing array from Local Storage
+// Load existing array from Local Storage
 localStorage.setItem("entries", JSON.stringify(entries)); //saves data as a string to local Storage
 
 
@@ -84,11 +86,19 @@ return false;
 //test to see if JavaScript is working. -passed
 console.log("JavaScript loaded and is working on the page");
 
-    // TO DO: Make form clear after clicking "Save Workout"
+// 2. Display previous workout data
+
+//USER SUBMITS FORM 
+//IF exerciseName === a pre-existing name stored in the array
+//Display all entries from the array that match that name, along with its other key-value pairs
+
+//loop through each index to find every object that contains matching name.
 
 
 
-//also TO DO: retreieve data, delete data, clear data
 
-// add new workout 
-// save updated array
+
+
+
+//ADD POINTER CURSOR TO CREATE ON SEARCH PAGE
+//ADD HOME BUTTON/ SEARCH TO HTML 

@@ -87,12 +87,49 @@ return false;
 console.log("JavaScript loaded and is working on the page");
 
 // 2. Display previous workout data
+// https://www.geeksforgeeks.org/javascript/how-to-get-the-value-of-text-input-field-using-javascript/
 
-//USER SUBMITS FORM 
-//IF exerciseName === a pre-existing name stored in the array
-//Display all entries from the array that match that name, along with its other key-value pairs
+function displayUserData (){
 
-//loop through each index to find every object that contains matching name.
+    //select text input field
+    const textInput = document.getElementById('exerciseName');
+    //get value of input field
+    const inputValue = textInput.value
+
+//check to see if any matches are found
+    let found = false;
+
+    //get the div
+    const previousWorkouts = document.getElementById("previousWorkouts");
+    previousWorkouts.innerHTML = "";
+
+    //loop through entries
+    for(let i= 0; i < entries.length; i++){
+        //compare the users input to the same workouts
+        if (inputValue === entries[i].exerciseName){
+        found = true;   
+
+        //display previous workouts
+        // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
+        // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
+       previousWorkouts.innerHTML += 
+       `Date: ${entries[i].dateCompleted}
+        <br><br>
+       Weight: ${entries[i].weight}
+        <br>
+       Sets: ${entries[i].sets}
+        <br>
+       Reps: ${entries[i].reps} 
+       <br><br>`
+    }
+
+    }
+    if (!found) {
+    previousWorkouts.innerHTML = "No previous workouts found."
+
+}
+
+}
 
 
 

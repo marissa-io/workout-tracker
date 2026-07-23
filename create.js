@@ -9,7 +9,7 @@
 //I was going to do an entries object filled with workout objects but
 //since names can be repeated, they cannot be stored in the same object.
 
-const entries = [
+let entries = [
 
 //workout objects go here {
 // exerciseName:
@@ -25,10 +25,27 @@ const entries = [
 
 // https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
 function addWorkoutEntry(form){
-
+  
 //testing to see if function is working in console - passed
     console.log("Function Started");
 
+
+// https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+
+//TO DO: Test localStorage - passed
+//I feel like I could shorthand this If statement, but it works for now!!
+//check if "entries" is null
+if (localStorage.getItem("entries") === null){
+    entries = []; //if so start with empty array
+}
+//check for any existing workouts in Local Storage
+else{
+    entries = JSON.parse(localStorage.getItem("entries")); //if so, convert local Storage data 
+    //back to an object and store in entries;
+}
+
+
+//store user input into object
     let workoutEntry= {
         exerciseName: form.exerciseName.value,
         weight: form.weight.value,
@@ -38,9 +55,16 @@ function addWorkoutEntry(form){
     }
 
 //adds object to the end of the entries array
+// https://www.geeksforgeeks.org/javascript/add-elements-to-a-javascript-array/
 entries.push(workoutEntry);
 // testing to see if object is added to entries - passed
+
+// 2. Load existing array from Local Storage
+localStorage.setItem("entries", JSON.stringify(entries)); //saves data as a string to local Storage
+
+
 console.log(entries);
+
 
 //testing to see if page refreshes - passed
 
@@ -62,11 +86,7 @@ console.log("JavaScript loaded and is working on the page");
 
     // TO DO: Make form clear after clicking "Save Workout"
 
-// 2. Load existing array from Local Storage
 
-//TO DO: Testing
-// https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
-localStorage.setItem("entries", JSON.stringify(entries)); //saves data
 
 //also TO DO: retreieve data, delete data, clear data
 

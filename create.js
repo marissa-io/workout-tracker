@@ -131,6 +131,11 @@ function displayUserData (){
 
 }
 
+// https://www.w3schools.com/js/js_htmldom_eventlistener.asp - to show event listener syntax
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event - showed me there in fact is an "input" event
+const exerciseInput = document.getElementById("exerciseName");
+exerciseInput.addEventListener("input", displayUserData);
+
 
 
 

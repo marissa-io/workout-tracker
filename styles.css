@@ -311,18 +311,22 @@ form button {
 }
 
 
-#previous-entry{
+#previousEntry{
     background-color: white;
     border-radius:20px;
     width: 500px;
+    height: 600px;
     margin: 30px;
     padding: 20px;
 }
 
-#previous-entry h3 {
-
+#previousEntry h3 {
     font-family: "Monaco", monospace;
     color:#84a9ff;
+}
+
+footer{
+    background-color:#d3e0ff
 }
 /* References */
 /* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */

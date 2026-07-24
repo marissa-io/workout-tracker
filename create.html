@@ -12,12 +12,17 @@
     <h2><i>Strength Training Edition</i></h2>
     </header>
 
-    <main>
 
+    <main>
+        <div class="top-buttons">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='history.html'">Search</button>
+        </div>
 
     <!-- this will need to change according to if the user clicks create or edit -->
     <h2 id="page-title">CREATE WORKOUT ENTRY</h2>
 
+    <div class="page-layout">
         <form onsubmit="return addWorkoutEntry(this)">
             <div class="form-div">
             <label for="exerciseName">Exercise Name: </label>
@@ -60,7 +65,7 @@
         <!-- Save for JavaScript -->
         <!-- needs to display all previous workouts that have identicsal names to the one being created/edited -->
     </section>  
-    
+    </div>
     </main>
 
      <footer>

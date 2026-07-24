@@ -5,6 +5,9 @@ header {
     padding: 30px 0;
 }
 
+/* https://www.w3schools.com/css/css_font_size.asp */
+/* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
+/* https://www.w3schools.com/css/css_text_shadow.asp */
 .title h1{
     font-family: "Monaco", monospace;
     font-size: 4rem;
@@ -26,6 +29,9 @@ margin-bottom: 5px;
 
 /* index.html */
 
+/* https://www.tutorialpedia.org/blog/add-text-next-to-image-css */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/justify-content */
+/* https://stackoverflow.com/questions/20626685/how-do-i-set-distance-between-flexbox-items */
 .intro {
     display: flex;
     align-items: center;
@@ -34,6 +40,7 @@ margin-bottom: 5px;
 
 }
 
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction */
 .intro-text{
     display:flex;
     flex-direction: column;
@@ -51,6 +58,9 @@ text-shadow: 2px 2px rgb(18, 48, 108);
 text-align: center;
 }
 
+/* https://www.w3schools.com/csS/css3_buttons.asp */
+/* https://www.w3schools.com/cssref/pr_class_cursor.php */
+
 .intro button {
     width: 250px;
     height: 50px;
@@ -64,6 +74,8 @@ text-align: center;
 }
 
 
+/* https://www.w3schools.com/howto/howto_css_image_responsive.asp */
+/* https://www.freecodecamp.org/news/css-properties-examples/ */
 
 .intro img {
     width: 50%;
@@ -139,6 +151,7 @@ main {
 
 }
 
+/* https://www.w3schools.com/howto/howto_css_rounded_images.asp */
 #logo{
     width: 400px;
     height: 400px;
@@ -163,6 +176,7 @@ main {
     padding: 10px 20px;
     margin-top: 20px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .search-bar{
@@ -274,6 +288,14 @@ gap: 190px;
     font-size: 2rem;
 }
 
+.page-layout{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+}
+
 form{
     background-color: white;
     width: 500px;
@@ -309,39 +331,30 @@ form button {
     cursor: pointer;
     border: none;
 }
+form, #previousEntry{
+    width: 600px;
+    min-height: 500px;
+}
+
 
 
 #previousEntry{
     background-color: white;
     border-radius:20px;
-    width: 500px;
-    height: 600px;
+    /* width: 500px; */
     margin: 30px;
     padding: 20px;
 }
 
-#previousEntry h3 {
+#previousEntry h3{
     font-family: "Monaco", monospace;
     color:#84a9ff;
 }
 
+
 footer{
     background-color:#d3e0ff
 }
-/* References */
-/* https://www.tutorialpedia.org/blog/add-text-next-to-image-css/q */
-/* https://www.w3schools.com/css/css_font_size.asp */
-/* https://www.geeksforgeeks.org/css/how-to-change-line-spacing-in-css/ */
-/* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
-/* https://www.w3schools.com/css/css_text_shadow.asp */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/justify-content */
-/* https://stackoverflow.com/questions/20626685/how-do-i-set-distance-between-flexbox-items */
-/* https://www.w3schools.com/csS/css3_buttons.asp */
-/* https://www.w3schools.com/cssref/pr_class_cursor.php */
-/* https://www.w3schools.com/howto/howto_css_image_responsive.asp */
-/* https://www.freecodecamp.org/news/css-properties-examples/ */
-/* https://stackoverflow.com/questions/12429677/align-two-headings-closer-to-each-other-using-css */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction */
-/* https://learn.shayhowe.com/html-css/positioning-content/ */
-/* https://www.w3schools.com/howto/howto_css_rounded_images.asp */
+
+
+/* https://learn.shayhowe.com/html-css/positioning-content/ - at one point I was using float, but it appears I didn't end up using it.*/

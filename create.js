@@ -21,21 +21,7 @@ let entries = [
 
 ]
 
-
-//1. CREATE DATA
-// user fills out form, reads values, and creates workout object
-
-// https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
-function addWorkoutEntry(form){ //called by browser when form is submitted
-  
-//testing to see if function is working in console - passed
-    console.log("Function Started");
-
-
-// https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
-
 //TO DO: Test localStorage - passed
-//I feel like I could shorthand this If statement, but it works for now!!
 //check if "entries" is null
 if (localStorage.getItem("entries") === null){
     entries = []; //if so start with empty array
@@ -45,7 +31,17 @@ else{
     entries = JSON.parse(localStorage.getItem("entries")); //if so, convert local Storage data 
     //back to an object and store in entries;
 }
+// https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
 
+
+//1. CREATE DATA
+// user fills out form, reads values, and creates workout object
+
+// https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
+function addWorkoutEntry(form){ //called by browser when form is submitted
+  
+//testing to see if function is working in console - passed
+    console.log("Function Started");
 
 //store user input into object
     let workoutEntry= {
@@ -113,14 +109,13 @@ function displayUserData (){
         // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
         // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        previousWorkouts.innerHTML += 
-       `Date: ${entries[i].dateCompleted}
-        <br><br>
-       Weight: ${entries[i].weight}
+       `<h3>Date Completed: ${entries[i].dateCompleted}</h3>
+       <h4>Weight: ${entries[i].weight}
         <br>
        Sets: ${entries[i].sets}
         <br>
        Reps: ${entries[i].reps} 
-       <br><br>`
+       <br><br><br></h4>`
     }
 
     }

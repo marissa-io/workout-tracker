@@ -15,7 +15,7 @@
     <main>
     <section>
 
-    <div class="top-buttons">
+    <div class="topButtons">
 
         <button onclick="window.location.href='index.html'">
             Home
@@ -25,24 +25,24 @@
         </button>
 </div>
 
-        <h2 id="workout-history">Workout History</h2>
+        <h2 id="workoutHistory">Workout History</h2>
 
-        <div class="search-bar">
-        <input type="text" id="search-workout" placeholder="Search workout by name">
+        <div class="searchBar">
+        <input type="text" id="searchWorkout" placeholder="Search workout by name">
         
-        <div class="filter-by">
-        <label for="filter-by">Filter by:</label>
-        <select id="filter-by">
-           <option value="date-newest">Newest to Oldest</option>     
-           <option value="date-oldest">Oldest to Newest</option>     
-           <option value="name-AZ">Workout name (A-Z)</option>     
-           <option value="name-ZA">Workout name (Z-A)</option>     
+        <div class="filterBy">
+        <label for="sortWorkouts">Filter by:</label>
+        <select id="sortWorkouts">
+           <option value="dateNewest">Newest to Oldest</option>     
+           <option value="dateOldest">Oldest to Newest</option>     
+           <option value="nameAZ">Workout name (A-Z)</option>     
+           <option value="nameZA">Workout name (Z-A)</option>     
         </select>
         </div>
     </div>  
 
-<div class="workout-header">
-    <div class="workout-info-titles">
+<div class="workoutHeader">
+    <div class="workoutInfoTitles">
         <p>Date</p>
 <p>Exercise Name</p>
     </div>
@@ -50,19 +50,8 @@
 
 </div>
 
-
-        <!-- add filter selector somewhere next to search bar -->
-        <div class="workout-card">
-            <!-- FAKE WORKOUT INFO DELETE LATER -->
-             <div class="workout-info">
-            <p class="spec-date">July 20, 2026</p>
-            <p class="spec-exercise-name">Bench Press</p>
-            </div>
-
-            <div class="workout-buttons">
-            <button>Edit</button>
-            <button>Delete</button>
-            </div>
+       
+            <div id="workoutList"></div>
 
         </div>
 
@@ -71,6 +60,8 @@
      <footer>
         <p>2026 Workout Tracker: Version 1.0</p>
     </footer>
+
+        <script src="history.js"></script>
 </body>
 </html>
 

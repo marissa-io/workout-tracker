@@ -41,7 +41,7 @@ margin-bottom: 5px;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction */
-.intro-text{
+.introText{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +50,7 @@ margin-bottom: 5px;
     gap:50px 
 }
 
-.intro-text h2 {
+.introText h2 {
 font-family: "Monaco", monospace;
 font-size: 4rem;
 color: #84a9ff;
@@ -162,12 +162,12 @@ main {
 
 /* history.html */
 
-.top-buttons {
+.topButtons {
     display: flex;
     justify-content: space-between;
 }
 
-.top-buttons button {
+.topButtons button {
     background-color: #84a9ff;
     color: white;
     font-family: "Monaco", monospace;
@@ -179,12 +179,12 @@ main {
     cursor: pointer;
 }
 
-.search-bar{
+.searchBar{
 display: flex;
 gap: 20px;
 }
 
-#search-workout {
+#searchWorkout {
     border: 2px solid #84a9ff;
 font-size: 1rem;
     padding: 15px;
@@ -192,18 +192,18 @@ font-size: 1rem;
     
 }
 
-.filter-by{
+.filterBy{
     padding: 15px;
     border-radius:10px;
 }
 
-.filter-by label {
+.filterBy label {
     font-family: "Monaco", monospace;
     text-shadow: 2px 2px white;
     font-size:1rem;
 }
 
-.filter-by select{
+.filterBy select{
        font-family: "Monaco", monospace;
         background-color: #84a9ff;
         color: white;
@@ -211,7 +211,7 @@ font-size: 1rem;
         font-size: 1rem;
 }
 
-.workout-header{
+.workoutHeader{
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -221,17 +221,28 @@ font-family: "Monaco", monospace;
 color: #84a9ff;
 }
 
-.workout-card{
+
+.workoutInfoTitles{
     display: flex;
+    width: 70%;
+    gap: 190px;
+}
+
+#workoutList{
+    margin: 0px 200px 20px 200px;
+}
+
+.workoutCard{
+      display: flex;
+      justify-content: space-between;
     align-items: center;
     background-color: white;
     border-radius: 15px;
     padding: 20px;
-    margin: 0px 200px 20px 200px;
+    margin-bottom: 20px;
 }
 
-
-.workout-info{
+.workoutInfo{
 display: flex;
 font-family: "Monaco", monospace;
 color: #84a9ff;
@@ -240,29 +251,29 @@ gap: 60px;
 gap: 60px; */
 }
 
-.workout-info-titles{
+.workoutInfoTitles{
 display: flex;
 font-family: "Monaco", monospace;
 color: #84a9ff;
 width: 70%;
 gap: 190px;
 }
-.spec-date{
+.displayDate{
     width: 180px;
 }
-.spec-exercise-name{
+.displayName{
     width: 250px;
     margin-right: 0;
 }
 
-.workout-buttons {
+.workoutButtons {
     display: flex;
     gap: 10px;
     margin-left: auto;
 }
  
 
-.workout-buttons button{
+.workoutButtons button{
         background-color: #84a9ff;
     color: white;
     font-family: "Monaco", monospace;
@@ -271,7 +282,7 @@ gap: 190px;
         font-size: 1rem;
 }
 
-#workout-history {
+#workoutHistory {
     text-align:center;
     font-family: "Monaco", monospace;
     color: white;
@@ -280,7 +291,7 @@ gap: 190px;
 
 /* create.html */
 
-#page-title{
+#pageTitle{
     text-align: center;
     font-family: "Monaco", monospace;
     color: white;
@@ -288,7 +299,7 @@ gap: 190px;
     font-size: 2rem;
 }
 
-.page-layout{
+.pageLayout{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -304,7 +315,7 @@ form{
     border-radius: 20px;
 }
 
-.form-div{
+.formDiv{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;

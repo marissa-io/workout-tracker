@@ -73,6 +73,10 @@ form.reset();  //this may need extra attention,
 //OR show previous workouts ONLY after submission?
 //OR show previous workouts ONLY when user selects a pre-existing entry to edit?
 
+//Once user clicks "save", JavaScript clears out the previousWorkouts div.
+const previousWorkouts = document.getElementById("previousWorkouts");
+previousWorkouts.innerHTML = "";
+
 return false;
 }
 
@@ -130,12 +134,3 @@ function displayUserData (){
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event - showed me there in fact is an "input" event
 const exerciseInput = document.getElementById("exerciseName");
 exerciseInput.addEventListener("input", displayUserData);
-
-
-
-
-
-
-
-//ADD POINTER CURSOR TO CREATE ON SEARCH PAGE
-//ADD HOME BUTTON/ SEARCH TO HTML 

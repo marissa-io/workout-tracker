@@ -14,37 +14,37 @@
 
 
     <main>
-        <div class="top-buttons">
+        <div class="topButtons">
             <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='history.html'">Search</button>
         </div>
 
     <!-- this will need to change according to if the user clicks create or edit -->
-    <h2 id="page-title">CREATE WORKOUT ENTRY</h2>
+    <h2 id="pageTitle">CREATE WORKOUT ENTRY</h2>
 
-    <div class="page-layout">
+    <div class="pageLayout">
         <form onsubmit="return addWorkoutEntry(this)">
-            <div class="form-div">
+            <div class="formDiv">
             <label for="exerciseName">Exercise Name: </label>
             <input type="text" id="exerciseName" name="exerciseName">
             </div>
 
-            <div class="form-div">
+            <div class="formDiv">
             <label for="weight">Weight(lbs): </label>
             <input type="number" id="weight" name="weight">
             </div>
             
-            <div class="form-div">
+            <div class="formDiv">
             <label for="sets">Total Sets: </label>
             <input type="number" id="sets" name="sets">
             </div>
             
-            <div class="form-div">
+            <div class="formDiv">
             <label for="reps">Repetition Count: </label>
             <input type="number" id="reps" name="reps">
             </div>
             
-            <div class="form-div">
+            <div class="formDiv">
             <label for="dateCompleted">Date Completed: </label>
             <input type="date" id="dateCompleted" name="dateCompleted">
             </div>

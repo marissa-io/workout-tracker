@@ -124,7 +124,7 @@ function displayUserData (){
 
     }
     if (!found) {
-    previousWorkouts.innerHTML = "No previous workouts found."
+    previousWorkouts.innerHTML = "No previous workouts found.";
 
 }
 

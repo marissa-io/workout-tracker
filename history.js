@@ -42,5 +42,44 @@ function displayWorkouts(workouts){
 
 
  //TO DO: READ AND MATCH USER SEARCHES
- //TO DO: SORTING FEATURE
+
+function displaySearch (workouts){
+
+//variable for search input field
+const searchInput = document.getElementById("searchWorkout");
+
+//get value of the search
+const searchValue = searchInput.value;
+
+let found = false;
+
+const workoutList = document.getElementById("workoutList");
+workoutList.innerHTML="";
+
+if(searchValue === ""){
+    displayWorkouts(entries);
+}
+
+for(let i=0; i < workouts.length; i++){
+    if(searchValue == workouts[i].exerciseName){
+        found = true;
+
+        workoutList.innerHTML +=
+        `<p>${workouts[i].dateCompleted}</p>
+        <p>${workouts[i].exerciseName}</p>`
+    };
+}
+if(!found){
+    workoutList.innerHTML="No workouts match your search.";
+
+}
+}
+
+const workoutInput = document.getElementById("searchWorkout");
+searchWorkout.addEventListener("input", displaySearch)
+
+ //TO DO: SORTING FEATURE NEW-OLD OLD-NEW
+//  A-Z AND Z-A
+
+
  //TO DO: EDIT AND DELETE FEATURE

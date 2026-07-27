@@ -45,38 +45,39 @@ function displayWorkouts(workouts){
 
 function displaySearch (workouts){
 
-//variable for search input field
-const searchInput = document.getElementById("searchWorkout");
-
-//get value of the search
-const searchValue = searchInput.value;
-
-let found = false;
-
+//variable for search input field and get input value
+// https://www.w3schools.com/js/js_string_methods.asp
+const searchInput = document.getElementById("searchWorkout").value.trim().toLowerCase();
 const workoutList = document.getElementById("workoutList");
-workoutList.innerHTML="";
 
-if(searchValue === ""){
-    displayWorkouts(entries);
-}
+//Create new array to store the matching data
+const matchingWorkouts = [];
 
+//loop through workouts
 for(let i=0; i < workouts.length; i++){
-    if(searchValue == workouts[i].exerciseName){
-        found = true;
-
-        workoutList.innerHTML +=
-        `<p>${workouts[i].dateCompleted}</p>
-        <p>${workouts[i].exerciseName}</p>`
-    };
+    //if the workoutName is the same as the user's search...
+    if(workouts[i].exerciseName.toLowerCase().includes(searchInput)){
+        //...add it to the matching workouts array
+        matchingWorkouts.push(workouts[i]);
+    }
 }
-if(!found){
-    workoutList.innerHTML="No workouts match your search.";
-
+//if there are no matching workouts, display message
+if(matchingWorkouts.length === 0){
+//included class workoutCard for styling purposes
+    workoutList.innerHTML= 
+    `<div class="workoutCard">
+    <p>No search results found.</p>
+    </div>`
+}
+else {
+//calling displayWorkouts to show matching searches only.
+displayWorkouts(matchingWorkouts);
 }
 }
 
+//create an event listener
 const workoutInput = document.getElementById("searchWorkout");
-searchWorkout.addEventListener("input", displaySearch)
+workoutInput.addEventListener("input", () =>{displaySearch(entries);});
 
  //TO DO: SORTING FEATURE NEW-OLD OLD-NEW
 //  A-Z AND Z-A

@@ -47,6 +47,8 @@ function displaySearch (workouts){
 
 //variable for search input field and get input value
 // https://www.w3schools.com/js/js_string_methods.asp
+// https://www.geeksforgeeks.org/javascript/search-bar-using-html-css-and-javascript/
+// https://www.w3schools.com/Jsref/jsref_includes.asp
 const searchInput = document.getElementById("searchWorkout").value.trim().toLowerCase();
 const workoutList = document.getElementById("workoutList");
 
@@ -81,6 +83,40 @@ workoutInput.addEventListener("input", () =>{displaySearch(entries);});
 
  //TO DO: SORTING FEATURE NEW-OLD OLD-NEW
 //  A-Z AND Z-A
+
+function sortingWorkouts(workouts){
+    const sortChoice = document.getElementById("sortWorkouts").value;
+
+    //created a copy of the array so it does not permanently modify the order of the original array.
+    let sortedWorkouts= workouts.slice();
+    
+    // https://www.w3docs.com/snippets/javascript/how-to-sort-array-alphabetically-in-javascript
+    // https://www.geeksforgeeks.org/javascript/sort-an-object-array-by-date-in-javascript/
+        if(sortChoice === "dateNewest"){
+        sortedWorkouts = workouts.sort((a,b)=>new Date(b.dateCompleted) - new Date(a.dateCompleted));
+
+        }
+        else if(sortChoice === "dateOldest"){
+        sortedWorkouts = workouts.sort((a,b)=> new Date(a.dateCompleted) - new Date(b.dateCompleted));
+        }
+        else if(sortChoice === "nameAZ"){
+            sortedWorkouts = workouts.sort((a,b)=> a.exerciseName.localeCompare(b.exerciseName));
+        }
+        else if(sortChoice === "nameZA"){
+            sortedWorkouts = workouts.sort((a,b)=> b.exerciseName.localeCompare(a.exerciseName));
+
+        }
+            displayWorkouts(sortedWorkouts);
+    }
+
+    const sortDropdown = document.getElementById("sortWorkouts");
+    sortDropdown.addEventListener("change", () => {
+        sortingWorkouts(entries);
+    });
+
+
+//TO DO: newest-oldest needs work, if user writes exerciseName in all lowercase, 
+//make it upper case???
 
 
  //TO DO: EDIT AND DELETE FEATURE

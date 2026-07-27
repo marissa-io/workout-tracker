@@ -91,10 +91,8 @@ console.log("JavaScript loaded and is working on the page");
 
 function displayUserData (){
 
-    //select text input field
-    const textInput = document.getElementById('exerciseName');
-    //get value of input field
-    const inputValue = textInput.value
+    //select text input field and get value while also making it case-insensitive
+    const textInput = document.getElementById('exerciseName').value.trim().toLowerCase();
 
 //check to see if any matches are found
     let found = false;
@@ -106,7 +104,7 @@ function displayUserData (){
     //loop through entries
     for(let i= 0; i < entries.length; i++){
         //compare the users input to the same workouts
-        if (inputValue === entries[i].exerciseName){
+        if (entries[i].exerciseName.toLowerCase().includes(textInput)){
         found = true;   
 
         //display previous workouts

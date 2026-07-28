@@ -118,7 +118,6 @@ function sortingWorkouts(workouts){
 
 
 
- //TO DO: EDIT AND DELETE FEATURE
 // https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 
  function editWorkout(index){
@@ -142,3 +141,23 @@ function sortingWorkouts(workouts){
     localStorage.removeItem("editWorkout");
     window.location.href="create.html";
  }
+
+ function deleteWorkout(index){
+
+//TO DO: add a confirmation message before deleting
+
+    //remove workout from array
+    entries.splice(index, 1);
+
+    //save updated array
+    localStorage.setItem("entries", JSON.stringify(entries));
+
+    //refresh displayed workouts
+    displayWorkouts(entries);
+ }
+
+//  TO DO: input valdiation / 
+// testing / edge cases
+//  Format references
+//  clean up code
+//  fix CSS

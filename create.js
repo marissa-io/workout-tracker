@@ -9,6 +9,8 @@
 //I was going to do an entries object filled with workout objects but
 //since names can be repeated, they cannot be stored in the same object.
 
+console.log("create.js loaded");
+
 let entries = [
 
 //workout objects go here {
@@ -21,6 +23,7 @@ let entries = [
 
 ]
 
+console.log("entries loaded", entries);
 
 
 //TO DO: Test localStorage - passed
@@ -39,13 +42,17 @@ else{
 //Add remaining steps of editWorkout function here
 
 const editingIndex = localStorage.getItem("editWorkout");
+console.log("editing index: ", editingIndex);
 
 //if the index is not null 
 if (editingIndex !== null){
     //populate the form with previously exisiting workout data.
     // https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
+console.log("editing mode");
 
     const workout = entries[editingIndex];
+    console.log("workout: ", workout);
+
 
     document.getElementById("exerciseName").value= workout.exerciseName;
     document.getElementById("weight").value= workout.weight;
@@ -82,6 +89,9 @@ if(editingIndex !== null){
 entries[editingIndex] = workoutEntry;
 
 
+//added to prevent from overriding the same workout entry when creating a new entry
+// https://stackoverflow.com/questions/63412799/how-do-i-removeitem-from-localstorage
+localStorage.removeItem("editWorkout");
 }
 else{
 //adds object to the end of the entries array

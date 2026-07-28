@@ -32,7 +32,7 @@ function displayWorkouts(workouts){
        </div>
        <div class="workoutButtons">
        <button onclick="editWorkout(${i})">Edit</button>
-       <button onclick="deleteWorkout(${i})>Delete</button>
+       <button onclick="deleteWorkout(${i})">Delete</button>
        </div>
        </div>`;
     } //added the onclick at "i" so it can edit the index of the workout in the loop
@@ -123,6 +123,7 @@ function sortingWorkouts(workouts){
 
  function editWorkout(index){
 
+    console.log("Editing workout: ", index);
     //store which workout is being edited
     localStorage.setItem("editWorkout", index);
 
@@ -133,4 +134,11 @@ function sortingWorkouts(workouts){
 //if it IS null, then the user is creating a workout. 
 // therefore a new workout will be added to the entries array
 
+ }
+
+ //added this function for when user clicks "Create New +", 
+ // the previously edited entry will no longer appear in the form's input fields.
+ function newWorkout(){
+    localStorage.removeItem("editWorkout");
+    window.location.href="create.html";
  }

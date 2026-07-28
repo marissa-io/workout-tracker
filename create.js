@@ -46,6 +46,10 @@ console.log("editing index: ", editingIndex);
 
 //if the index is not null 
 if (editingIndex !== null){
+    https://www.w3schools.com/jsref/prop_node_textcontent.asp
+    //Change page title to say "Edit" when user is editing an entry.
+document.getElementById("pageTitle").textContent="EDIT WORKOUT ENTRY";
+
     //populate the form with previously exisiting workout data.
     // https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
 console.log("editing mode");

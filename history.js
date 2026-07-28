@@ -115,8 +115,24 @@ function sortingWorkouts(workouts){
     });
 
 
-//TO DO: newest-oldest needs work, if user writes exerciseName in all lowercase, 
-//make it upper case???
-
 
  //TO DO: EDIT AND DELETE FEATURE
+
+ function editWorkout(index){
+
+    //store which workout is being edited
+
+    //go to create.html
+
+
+    //get index of item being edited
+
+    //check if not null...
+        //-then load entries from localstorage
+        //get workout being edited
+        //fill form
+
+//if it IS null, then the user is creating a workout. 
+// therefore a new workout will be added to the entries array
+
+ }

@@ -21,6 +21,8 @@ let entries = [
 
 ]
 
+
+
 //TO DO: Test localStorage - passed
 //check if "entries" is null
 if (localStorage.getItem("entries") === null){
@@ -32,6 +34,27 @@ else{
     //back to an object and store in entries;
 }
 // https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+
+
+//Add remaining steps of editWorkout function here
+
+const editingIndex = localStorage.getItem("editWorkout");
+
+//if the index is not null 
+if (editingIndex !== null){
+    //populate the form with previously exisiting workout data.
+    // https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
+
+    const workout = entries[editingIndex];
+
+    document.getElementById("exerciseName").value= workout.exerciseName;
+    document.getElementById("weight").value= workout.weight;
+    document.getElementById("sets").value= workout.sets;
+    document.getElementById("reps").value= workout.reps;
+    document.getElementById("dateCompleted").value= workout.dateCompleted;
+
+}
+
 
 
 //1. CREATE DATA
@@ -52,11 +75,20 @@ function addWorkoutEntry(form){ //called by browser when form is submitted
         dateCompleted: form.dateCompleted.value
     }
 
+//check if the user is editing an existing workout or creating a new one
+if(editingIndex !== null){
+
+    //replace exisiting workout
+entries[editingIndex] = workoutEntry;
+
+
+}
+else{
 //adds object to the end of the entries array
 // https://www.geeksforgeeks.org/javascript/add-elements-to-a-javascript-array/
 entries.push(workoutEntry);
 // testing to see if object is added to entries - passed
-
+}
 // Load existing array from Local Storage
 localStorage.setItem("entries", JSON.stringify(entries)); //saves data as a string to local Storage
 

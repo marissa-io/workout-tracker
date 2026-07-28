@@ -31,12 +31,14 @@ function displayWorkouts(workouts){
        <p class="displayName">${workouts[i].exerciseName}</p>
        </div>
        <div class="workoutButtons">
-       <button>Edit</button>
-       <button>Delete</button>
+       <button onclick="editWorkout(${i})">Edit</button>
+       <button onclick="deleteWorkout(${i})>Delete</button>
        </div>
        </div>`;
-    }
- }
+    } //added the onclick at "i" so it can edit the index of the workout in the loop
+// Reference for onclick: https://www.w3schools.com/jsref/event_onclick.asp 
+}
+
 
  displayWorkouts(entries);
 
@@ -117,20 +119,16 @@ function sortingWorkouts(workouts){
 
 
  //TO DO: EDIT AND DELETE FEATURE
+// https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 
  function editWorkout(index){
 
     //store which workout is being edited
+    localStorage.setItem("editWorkout", index);
 
     //go to create.html
+    window.location.href = "create.html";
 
-
-    //get index of item being edited
-
-    //check if not null...
-        //-then load entries from localstorage
-        //get workout being edited
-        //fill form
 
 //if it IS null, then the user is creating a workout. 
 // therefore a new workout will be added to the entries array

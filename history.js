@@ -23,6 +23,12 @@ function displayWorkouts(workouts){
 
     for(let i= 0; i < workouts.length; i++){
 
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+        //extra variable to hold the index of the original workout to be edited/deleted
+       //this is to avoid the incorrect workout from being deleted when the user is filtering/searching
+        const originalIndex = entries.indexOf(workouts[i]);
+
+
         // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
         // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        workoutList.innerHTML += 
@@ -32,8 +38,8 @@ function displayWorkouts(workouts){
        <p class="displayName">${workouts[i].exerciseName}</p>
        </div>
        <div class="workoutButtons">
-       <button onclick="editWorkout(${i})">Edit</button>
-       <button onclick="deleteWorkout(${i})">Delete</button>
+       <button onclick="editWorkout(${originalIndex})">Edit</button>
+       <button onclick="deleteWorkout(${originalIndex})">Delete</button>
        </div>
        </div>`;
     } //added the onclick at "i" so it can edit the index of the workout in the loop
@@ -141,10 +147,18 @@ return;
 }
 
     entries.splice(index, 1);
-
-    //save updated array
+ //save updated array
     saveEntries();
-    //refresh displayed workouts
+
+    //added feature to improve user experience
+    //so the search/filtered list will stay visible even after deleting
+    const searchInput = document.getElementById("searchWorkout").value.trim();
+if(searchInput === ""){
     displayWorkouts(entries);
+}
+  else{ 
+    //refresh displayed workouts
+    displaySearch(entries);
+  }
  }
 

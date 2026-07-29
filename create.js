@@ -35,7 +35,7 @@ else{
 }
 // https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
 
-//Added function toa void redundancy
+//save workout list to local storage
 function saveEntries(){
     localStorage.setItem("entries", JSON.stringify(entries));
 }
@@ -99,16 +99,11 @@ else{
 entries.push(workoutEntry);
 }
 
-// Load existing array from Local Storage
-localStorage.setItem("entries", JSON.stringify(entries)); //saves data as a string to local Storage
+saveEntries(); //saves data as a string to local Storage
 
 
 
 form.reset();  //this may need extra attention, 
-//Since the user should be allowed to easily compare their old exercises to their new ones
-//Show previous workouts when exerciseName === a previous workout name while user typing?
-//OR show previous workouts ONLY after submission?
-//OR show previous workouts ONLY when user selects a pre-existing entry to edit?
 
 //Once user clicks "save", JavaScript clears out the previousWorkouts div.
 const previousWorkouts = document.getElementById("previousWorkouts");
@@ -120,7 +115,6 @@ return false;
 
 
 
-//test to see if JavaScript is working. -passed
 
 // https://www.geeksforgeeks.org/javascript/how-to-get-the-value-of-text-input-field-using-javascript/
 

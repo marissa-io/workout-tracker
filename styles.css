@@ -123,7 +123,9 @@ main {
 
 .card img {
 
-    /* placeholder until images are created */
+    width: 260px;
+    height: 180px;
+    margin-bottom: 20px;
 
 }
 

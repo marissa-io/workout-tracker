@@ -9,7 +9,6 @@
 //I was going to do an entries object filled with workout objects but
 //since names can be repeated, they cannot be stored in the same object.
 
-console.log("create.js loaded");
 
 let entries = [
 
@@ -23,10 +22,8 @@ let entries = [
 
 ]
 
-console.log("entries loaded", entries);
 
 
-//TO DO: Test localStorage - passed
 //check if "entries" is null
 if (localStorage.getItem("entries") === null){
     entries = []; //if so start with empty array
@@ -38,24 +35,25 @@ else{
 }
 // https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
 
+//Added function toa void redundancy
+function saveEntries(){
+    localStorage.setItem("entries", JSON.stringify(entries));
+}
 
 //Add remaining steps of editWorkout function here
 
 const editingIndex = localStorage.getItem("editWorkout");
-console.log("editing index: ", editingIndex);
 
 //if the index is not null 
 if (editingIndex !== null){
-    https://www.w3schools.com/jsref/prop_node_textcontent.asp
+    // https://www.w3schools.com/jsref/prop_node_textcontent.asp
     //Change page title to say "Edit" when user is editing an entry.
 document.getElementById("pageTitle").textContent="EDIT WORKOUT ENTRY";
 
     //populate the form with previously exisiting workout data.
     // https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
-console.log("editing mode");
 
     const workout = entries[editingIndex];
-    console.log("workout: ", workout);
 
 
     document.getElementById("exerciseName").value= workout.exerciseName;
@@ -74,11 +72,9 @@ console.log("editing mode");
 // https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
 function addWorkoutEntry(form){ //called by browser when form is submitted
   
-//testing to see if function is working in console - passed
-    console.log("Function Started");
 
 //store user input into object
-    let workoutEntry= {
+    const workoutEntry= {
         exerciseName: form.exerciseName.value,
         weight: form.weight.value,
         sets: form.sets.value,
@@ -101,18 +97,13 @@ else{
 //adds object to the end of the entries array
 // https://www.geeksforgeeks.org/javascript/add-elements-to-a-javascript-array/
 entries.push(workoutEntry);
-// testing to see if object is added to entries - passed
 }
+
 // Load existing array from Local Storage
 localStorage.setItem("entries", JSON.stringify(entries)); //saves data as a string to local Storage
 
 
-console.log(entries);
 
-
-//testing to see if page refreshes - passed
-
-//TO DO: Testing
 form.reset();  //this may need extra attention, 
 //Since the user should be allowed to easily compare their old exercises to their new ones
 //Show previous workouts when exerciseName === a previous workout name while user typing?
@@ -130,9 +121,7 @@ return false;
 
 
 //test to see if JavaScript is working. -passed
-console.log("JavaScript loaded and is working on the page");
 
-// 2. Display previous workout data
 // https://www.geeksforgeeks.org/javascript/how-to-get-the-value-of-text-input-field-using-javascript/
 
 function displayUserData (){
@@ -147,13 +136,11 @@ function displayUserData (){
     const previousWorkouts = document.getElementById("previousWorkouts");
     previousWorkouts.innerHTML = "";
 
-    //loop through entries
     for(let i= 0; i < entries.length; i++){
         //compare the users input to the same workouts
         if (entries[i].exerciseName.toLowerCase().includes(textInput)){
         found = true;   
 
-        //display previous workouts
         // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
         // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        previousWorkouts.innerHTML += 

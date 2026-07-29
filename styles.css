@@ -84,8 +84,6 @@ text-align: center;
 }
 
 main {
-    margin-top: 0px;
-    padding: 0px;
     background-color: #d3e0ff;
 }
 
@@ -142,6 +140,7 @@ main {
 
 .quote {
     width: 80%;
+    margin: 0 auto;
     font-family: "Monaco", monospace;
     font-size:1.5rem;
     color: white;
@@ -222,11 +221,7 @@ color: #84a9ff;
 }
 
 
-.workoutInfoTitles{
-    display: flex;
-    width: 70%;
-    gap: 190px;
-}
+
 
 #workoutList{
     margin: 0px 200px 20px 200px;
@@ -247,8 +242,6 @@ display: flex;
 font-family: "Monaco", monospace;
 color: #84a9ff;
 gap: 60px;
-/* width: 70%;
-gap: 60px; */
 }
 
 .workoutInfoTitles{
@@ -258,6 +251,7 @@ color: #84a9ff;
 width: 70%;
 gap: 190px;
 }
+
 .displayDate{
     width: 180px;
 }
@@ -353,7 +347,6 @@ form, #previousEntry{
 #previousEntry{
     background-color: white;
     border-radius:20px;
-    /* width: 500px; */
     margin: 30px;
     padding: 20px;
 }
@@ -365,7 +358,9 @@ form, #previousEntry{
 
 
 footer{
-    background-color:#d3e0ff
+    background-color:#d3e0ff;
+    text-align: center;
+    padding: 20px;
 }
 
 

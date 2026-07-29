@@ -9,19 +9,20 @@ else{
     entries= JSON.parse(localStorage.getItem("entries"));
 }
 
+function saveEntries(){
+    localStorage.setItem("entries", JSON.stringify(entries));
+}
 
 //display data in html.
 
 // I want to reuse the displayUserData function in the history using similar logic.
 
 function displayWorkouts(workouts){
-    //get the div
     const workoutList = document.getElementById("workoutList");
     workoutList.innerHTML = "";
 
-    //loop through entries
     for(let i= 0; i < workouts.length; i++){
-        //display previous workouts
+
         // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
         // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        workoutList.innerHTML += 
@@ -43,21 +44,17 @@ function displayWorkouts(workouts){
  displayWorkouts(entries);
 
 
- //TO DO: READ AND MATCH USER SEARCHES
 
 function displaySearch (workouts){
 
-//variable for search input field and get input value
 // https://www.w3schools.com/js/js_string_methods.asp
 // https://www.geeksforgeeks.org/javascript/search-bar-using-html-css-and-javascript/
 // https://www.w3schools.com/Jsref/jsref_includes.asp
 const searchInput = document.getElementById("searchWorkout").value.trim().toLowerCase();
 const workoutList = document.getElementById("workoutList");
 
-//Create new array to store the matching data
 const matchingWorkouts = [];
 
-//loop through workouts
 for(let i=0; i < workouts.length; i++){
     //if the workoutName is the same as the user's search...
     if(workouts[i].exerciseName.toLowerCase().includes(searchInput)){
@@ -83,7 +80,7 @@ displayWorkouts(matchingWorkouts);
 const workoutInput = document.getElementById("searchWorkout");
 workoutInput.addEventListener("input", () =>{displaySearch(entries);});
 
- //TO DO: SORTING FEATURE NEW-OLD OLD-NEW
+ //SORTING FEATURE NEW-OLD OLD-NEW
 //  A-Z AND Z-A
 
 function sortingWorkouts(workouts){
@@ -95,17 +92,17 @@ function sortingWorkouts(workouts){
     // https://www.w3docs.com/snippets/javascript/how-to-sort-array-alphabetically-in-javascript
     // https://www.geeksforgeeks.org/javascript/sort-an-object-array-by-date-in-javascript/
         if(sortChoice === "dateNewest"){
-        sortedWorkouts = workouts.sort((a,b)=>new Date(b.dateCompleted) - new Date(a.dateCompleted));
+        sortedWorkouts.sort((a,b)=>new Date(b.dateCompleted) - new Date(a.dateCompleted));
 
         }
         else if(sortChoice === "dateOldest"){
-        sortedWorkouts = workouts.sort((a,b)=> new Date(a.dateCompleted) - new Date(b.dateCompleted));
+        sortedWorkouts.sort((a,b)=> new Date(a.dateCompleted) - new Date(b.dateCompleted));
         }
         else if(sortChoice === "nameAZ"){
-            sortedWorkouts = workouts.sort((a,b)=> a.exerciseName.localeCompare(b.exerciseName));
+            sortedWorkouts.sort((a,b)=> a.exerciseName.localeCompare(b.exerciseName));
         }
         else if(sortChoice === "nameZA"){
-            sortedWorkouts = workouts.sort((a,b)=> b.exerciseName.localeCompare(a.exerciseName));
+            sortedWorkouts.sort((a,b)=> b.exerciseName.localeCompare(a.exerciseName));
 
         }
             displayWorkouts(sortedWorkouts);
@@ -122,17 +119,11 @@ function sortingWorkouts(workouts){
 
  function editWorkout(index){
 
-    console.log("Editing workout: ", index);
     //store which workout is being edited
     localStorage.setItem("editWorkout", index);
 
     //go to create.html
     window.location.href = "create.html";
-
-
-//if it IS null, then the user is creating a workout. 
-// therefore a new workout will be added to the entries array
-
  }
 
  //added this function for when user clicks "Create New +", 
@@ -144,20 +135,16 @@ function sortingWorkouts(workouts){
 
  function deleteWorkout(index){
 
-//TO DO: add a confirmation message before deleting
+    // https://www.w3schools.com/jsref/met_win_confirm.asp
+if(!confirm("Are you sure you want to delete this workout?")){
+return;
+}
 
-    //remove workout from array
     entries.splice(index, 1);
 
     //save updated array
-    localStorage.setItem("entries", JSON.stringify(entries));
-
+    saveEntries();
     //refresh displayed workouts
     displayWorkouts(entries);
  }
 
-//  TO DO: input valdiation / 
-// testing / edge cases
-//  Format references
-//  clean up code
-//  fix CSS

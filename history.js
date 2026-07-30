@@ -23,14 +23,14 @@ function displayWorkouts(workouts){
 
     for(let i= 0; i < workouts.length; i++){
 
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+        // MDN contributors. (2025, July 10). Array.prototype.indexOf(). Mozilla. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
         //extra variable to hold the index of the original workout to be edited/deleted
        //this is to avoid the incorrect workout from being deleted when the user is filtering/searching
         const originalIndex = entries.indexOf(workouts[i]);
 
 
         // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
-        // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
+        // Rafael (2018, October 17). Can you create object property names using template literals in javascript? Stack Overflow. https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        workoutList.innerHTML += 
        `<div class="workoutCard">
        <div class="workoutInfo">
@@ -43,19 +43,21 @@ function displayWorkouts(workouts){
        </div>
        </div>`;
     } //added the onclick at "i" so it can edit the index of the workout in the loop
-// Reference for onclick: https://www.w3schools.com/jsref/event_onclick.asp 
+// Reference for onclick: 
+// W3Schools. (n.d.) onclick Event. W3Schools. https://www.w3schools.com/jsref/event_onclick.asp 
 }
 
 
- displayWorkouts(entries);
+ displaySearch(entries);
 
 
 
 function displaySearch (workouts){
 
-// https://www.w3schools.com/js/js_string_methods.asp
-// https://www.geeksforgeeks.org/javascript/search-bar-using-html-css-and-javascript/
-// https://www.w3schools.com/Jsref/jsref_includes.asp
+    //I used this one to find toLowerCase() and trim()
+// W3Schools. (n.d.). JavaScript String Methods. W3Schools. https://www.w3schools.com/js/js_string_methods.asp
+// Bhutani, K. (2025, July 11). Search Bar using HTML CSS and JavaScript. GeeksForGeeks. https://www.geeksforgeeks.org/javascript/search-bar-using-html-css-and-javascript/
+// W3Schools (n.d.). JavaScript String includes(). W3Schools. https://www.w3schools.com/Jsref/jsref_includes.asp
 const searchInput = document.getElementById("searchWorkout").value.trim().toLowerCase();
 const workoutList = document.getElementById("workoutList");
 
@@ -78,7 +80,7 @@ if(matchingWorkouts.length === 0){
 }
 else {
 //calling displayWorkouts to show matching searches only.
-displayWorkouts(matchingWorkouts);
+sortingWorkouts(matchingWorkouts);
 }
 }
 
@@ -95,8 +97,8 @@ function sortingWorkouts(workouts){
     //created a copy of the array so it does not permanently modify the order of the original array.
     let sortedWorkouts= workouts.slice();
     
-    // https://www.w3docs.com/snippets/javascript/how-to-sort-array-alphabetically-in-javascript
-    // https://www.geeksforgeeks.org/javascript/sort-an-object-array-by-date-in-javascript/
+    // W3docs. (n.d.). How to Sort Array Alphabetically in JavaScript. W3docs. https://www.w3docs.com/snippets/javascript/how-to-sort-array-alphabetically-in-javascript
+    // GeeksForGeeks. (2025, May 24). Sort an Object Array by Date in JavaScript. GeeksForGeeks. https://www.geeksforgeeks.org/javascript/sort-an-object-array-by-date-in-javascript/
         if(sortChoice === "dateNewest"){
         sortedWorkouts.sort((a,b)=>new Date(b.dateCompleted) - new Date(a.dateCompleted));
 
@@ -116,12 +118,12 @@ function sortingWorkouts(workouts){
 
     const sortDropdown = document.getElementById("sortWorkouts");
     sortDropdown.addEventListener("change", () => {
-        sortingWorkouts(entries);
+            displaySearch(entries);
     });
 
 
 
-// https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
+// W3Schools. (n.d.). How TO - Redirect to Another Webpage. W3Schools. https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 
  function editWorkout(index){
 
@@ -141,7 +143,7 @@ function sortingWorkouts(workouts){
 
  function deleteWorkout(index){
 
-    // https://www.w3schools.com/jsref/met_win_confirm.asp
+    // W3Schools. (n.d.). Window confirm(). W3Schools. https://www.w3schools.com/jsref/met_win_confirm.asp
 if(!confirm("Are you sure you want to delete this workout?")){
 return;
 }
@@ -153,12 +155,8 @@ return;
     //added feature to improve user experience
     //so the search/filtered list will stay visible even after deleting
     const searchInput = document.getElementById("searchWorkout").value.trim();
-if(searchInput === ""){
-    displayWorkouts(entries);
-}
-  else{ 
-    //refresh displayed workouts
+
     displaySearch(entries);
   }
- }
+ 
 

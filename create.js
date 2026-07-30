@@ -33,7 +33,7 @@ else{
     entries = JSON.parse(localStorage.getItem("entries")); //if so, convert local Storage data 
     //back to an object and store in entries;
 }
-// https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+// Dagg Nabbit. (2010, July 28). How do I store an array in localStorage? [duplicate]. Stack Overflow. https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
 
 //save workout list to local storage
 function saveEntries(){
@@ -46,12 +46,12 @@ const editingIndex = localStorage.getItem("editWorkout");
 
 //if the index is not null 
 if (editingIndex !== null){
-    // https://www.w3schools.com/jsref/prop_node_textcontent.asp
+    // W3Schools. (n.d.). HTML DOM Element textContent. W3Schools. https://www.w3schools.com/jsref/prop_node_textcontent.asp
     //Change page title to say "Edit" when user is editing an entry.
 document.getElementById("pageTitle").textContent="EDIT WORKOUT ENTRY";
 
     //populate the form with previously exisiting workout data.
-    // https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
+    // Elentriel. (2016, August 6). How to edit and update data in local storage? Stack Overflow. https://stackoverflow.com/questions/38806425/how-to-edit-and-update-data-in-local-storage
 
     const workout = entries[editingIndex];
 
@@ -69,7 +69,7 @@ document.getElementById("pageTitle").textContent="EDIT WORKOUT ENTRY";
 //1. CREATE DATA
 // user fills out form, reads values, and creates workout object
 
-// https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
+//RobG. (2014, December 3). Form input to JavaScript Object. Stack Overflow. https://stackoverflow.com/questions/27265282/form-input-to-javascript-object
 function addWorkoutEntry(form){ //called by browser when form is submitted
   
 
@@ -90,12 +90,13 @@ entries[editingIndex] = workoutEntry;
 
 
 //added to prevent from overriding the same workout entry when creating a new entry
-// https://stackoverflow.com/questions/63412799/how-do-i-removeitem-from-localstorage
+// W3Schools. (n.d.). Storage removeItem() Method. W3Schools.https://www.w3schools.com/jsref/met_storage_removeitem.asp 
 localStorage.removeItem("editWorkout");
 }
+
 else{
 //adds object to the end of the entries array
-// https://www.geeksforgeeks.org/javascript/add-elements-to-a-javascript-array/
+// GeeksforGeeks. (2025, July 23). How to Add Elements to a JavaScript Array? GeeksforGeeks. https://www.geeksforgeeks.org/javascript/add-elements-to-a-javascript-array/
 entries.push(workoutEntry);
 }
 
@@ -116,7 +117,7 @@ return false;
 
 
 
-// https://www.geeksforgeeks.org/javascript/how-to-get-the-value-of-text-input-field-using-javascript/
+// GeeksforGeeks. (2025, September 13). Get the Value of Text Input Field using JavaScript. GeeksforGeeks. https://www.geeksforgeeks.org/javascript/how-to-get-the-value-of-text-input-field-using-javascript/
 
 function displayUserData (){
 
@@ -130,13 +131,16 @@ function displayUserData (){
     const previousWorkouts = document.getElementById("previousWorkouts");
     previousWorkouts.innerHTML = "";
 
+    //implemented this since textInput would techncially always include ""
+    if(textInput === ""){
+        return;
+    }
+
     for(let i= 0; i < entries.length; i++){
         //compare the users input to the same workouts
         if (entries[i].exerciseName.toLowerCase().includes(textInput)){
         found = true;   
 
-        // This reference only made me realize you could interpolate in JavaScript, the rest I just messed around with myself.
-        // https://stackoverflow.com/questions/52845823/can-you-create-object-property-names-using-template-literals-in-javascript
        previousWorkouts.innerHTML += 
        `<h3>Date Completed: ${entries[i].dateCompleted}</h3>
        <h4>Weight: ${entries[i].weight}
@@ -155,7 +159,7 @@ function displayUserData (){
 
 }
 
-// https://www.w3schools.com/js/js_htmldom_eventlistener.asp - to show event listener syntax
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event - showed me there in fact is an "input" event
+// W3Schools. (n.d.). JavaScript EventListener. W3Schools. https://www.w3schools.com/js/js_htmldom_eventlistener.asp - to show event listener syntax
+// MDN contributors. (2026, July 28). Element: input event. Mozilla. https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event - showed me there in fact is an "input" event
 const exerciseInput = document.getElementById("exerciseName");
 exerciseInput.addEventListener("input", displayUserData);
